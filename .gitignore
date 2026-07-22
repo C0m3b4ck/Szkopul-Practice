@@ -1,0 +1,14 @@
+prog
+*.o
+*.out
+*.exe
+*.class
+*.bin
+*.obj
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.elf
+*.mem
