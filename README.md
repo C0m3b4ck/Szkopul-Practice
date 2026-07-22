@@ -23,7 +23,7 @@ Started on July 22nd, 2026, by C0m3b4ck.
    ```
 2. Compile any solution:
    ```
-   g++ -o prog filename.cpp
+   g++ -O3 -static binary_calc.cpp -std=c++17 -o prog && ./prog
    ```
 3. Run with input:
    ```
@@ -31,5 +31,3 @@ Started on July 22nd, 2026, by C0m3b4ck.
    ```
 
 ---
-
-If you have questions, feature requests or want to contribute, reach out to **C0m3b4ck.**
