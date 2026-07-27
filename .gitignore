@@ -1,4 +1,9 @@
 prog
+scripts
+*.odp
+*.odt
+*.doc
+*.docx
 *.o
 *.out
 *.exe
