@@ -1,0 +1,3 @@
+* when dealing with MASSIVE ammounts of input, use buffers (<fstream>)
+* when interactive excercise ('judge' program communicates with your program), don't add the two lines from OIJ, also use <cstdio>
+* DON'T FOLLOW EXAMPLES - READ TEXT THOROUGHLY (ESPECIALLY THE LATE INTRO)
