@@ -18,10 +18,10 @@ int main()
     else
     {
         // ininital num to bin
-        int y = num;
-        for (int i = 0; i < num; i++)
+        long long y = num;
+        for (long long i = 0; i < num; i++)
         {
-            long int x = y % 2;
+            long long x = y % 2;
             y = y / 2;
             bin_arr.push_back(x);
             if (y <= 0)
@@ -37,9 +37,9 @@ int main()
         }
         std::cout << " ";
         // get sum of digits num 1
-        int sum = 0;
+        long long sum = 0;
         // ---> sum up the digits
-        for (int i = 0; i < bin_arr.size(); i++)
+        for (long long i = 0; i < bin_arr.size(); i++)
         {
             sum = sum + bin_arr[i];
         }
@@ -47,9 +47,9 @@ int main()
         bin_arr.clear();
         y = sum;
         //for (int i = 0; i < (sum / 2 + sum % 2); i++)
-        for (int i = 0; i < sum; i++)
+        for (long long i = 0; i < sum; i++)
         {
-            long int x = y % 2;
+            long long x = y % 2;
             y = y / 2;
             bin_arr.push_back(x);
             if (y <= 0)
@@ -59,7 +59,7 @@ int main()
         }
         std::reverse(bin_arr.begin(), bin_arr.end());
         //print num 2
-        for (int i = 0; i < bin_arr.size(); i++)
+        for (long long i = 0; i < bin_arr.size(); i++)
         {
             std::cout << bin_arr[i];
         }
