@@ -1,0 +1,33 @@
+skip checkpoint i:
+
+  before: ... -> i-1 -> i -> i+1 -> ...
+          left = |(i-1).first - i.first| + |(i-1).second - i.second|
+          right = |i.first - (i+1).first| + |i.second - (i+1).second|
+
+  after:  ... -> i-1 -> i+1 -> ...
+          skip = |(i-1).first - (i+1).first| + |(i-1).second - (i+1).second|
+
+  savings = left + right - skip
+
+  answer = total_sum_of_all_consecutive_legs - max_savings
+
+example:
+  points: (0,0) -> (8,3) -> (11,-1) -> (10,0)
+
+  total = |8-0|+|3-0| + |11-8|+|-1-3| + |10-11|+|0-(-1)|
+        = 11 + 7 + 2 = 20
+
+  skip i=1 (8,3):
+    left  = |0-8|+|0-3|    = 11
+    right = |8-11|+|3-(-1)| = 7
+    skip  = |0-11|+|0-(-1)| = 12
+    savings = 11+7-12 = 6
+
+  skip i=2 (11,-1):
+    left  = |8-11|+|3-(-1)| = 7
+    right = |11-10|+|-1-0|  = 2
+    skip  = |8-10|+|3-0|    = 5
+    savings = 7+2-5 = 4
+
+  max_savings = 6  (from skipping i=1)
+  answer = 20 - 6 = 14

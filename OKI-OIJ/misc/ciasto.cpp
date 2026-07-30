@@ -3,16 +3,17 @@ using namespace std;
 
 int main()
 {
-    short kg, speed, time = 0;
+    long long kg, speed, time = 0;
     std::cin >> kg >> speed >> time; //input
-    if (kg/speed > time || kg/speed == time)
+    if ((kg - (time * speed)) <= 0)
     {
         cout << "TAK\n";
-        cout << (kg%speed) << "\n";
+        cout << (speed * time - kg) << "\n";
     }
     else
     {
         cout << "NIE\n";
+        cout << (kg / time + 1) << "\n";
     }
     return 0;
 }
