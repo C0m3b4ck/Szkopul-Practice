@@ -1,0 +1,28 @@
+Problem: Plan WŁAMANIE (sejf.cpp)
+
+Input per test case:
+- n, m, q, A, B, C
+- n digits (1-3) — first sequence a
+- m digits (1-3) — second sequence b
+- q lines: (t_i, x_i) where t_i ∈ {'A','C'}, x_i is alternative value
+
+Output per test case:
+1. Password string (non-decreasing common subsequence with max sum using A,B,C)
+2. q lines: max sum for each query (using alternative A or C value)
+
+If no valid password: print "Just a legend" and skip queries.
+
+Key constraints:
+- Z ≤ 6000 test cases
+- n,m ≤ 100k each, q ≤ 100k
+- N = sum(max(n,m)) ≤ 1,200,000
+- Q = sum(q) ≤ 1,200,000
+- A,B,C ≤ 1e9
+
+Password checks:
+1. Non-decreasing (1≤2≤3)
+2. Common subsequence of both sequences
+3. Maximum sum of A*(#1) + B*(#2) + C*(#3)
+   - If not max, still valid but 65% points
+
+Goal: need efficient precomputation to answer queries in O(1) or O(log n), not O(q*n*m).

@@ -22,7 +22,7 @@ int main()
     std::sort (excercise_arr, excercise_arr + team_num);
     //debug 
     //std::cout << (excercise_arr[(team_num - 1)] - excercise_arr[(team_num - 2)]) << "\n";
-    if ((excercise_arr[(team_num - 1)] - excercise_arr[(team_num - 2)]) > 0 || (excercise_arr[(team_num - 1)] - excercise_arr[(team_num - 2)]) < 0)
+    if ((excercise_arr[(team_num - 1)] != excercise_arr[(team_num - 2)]))
         // -> if yes, output MAKSIMUM
     {
         std::cout << "MAKSIMUM \n";
