@@ -1,5 +1,6 @@
 prog
 scripts
+program
 *.odp
 *.odt
 *.doc

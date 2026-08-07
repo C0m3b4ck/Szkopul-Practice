@@ -1,0 +1,26 @@
+Wycinek
+Limit pamięci: 32 MB
+
+Jasio znalazł na strychu bardzo starą rolkę papieru, na której jego pradziadek wypisał ciąg liczb całkowitych. Do zabawy, którą niedawno wymyślił, potrzebny jest mu taki wycinek rolki papieru, na którym suma wszystkich liczb będzie wynosiła . Niepotrzebne kawałki wyrzuci do kosza. Jasio nie chce jednak wyrzucić za dużo z pamiątki po pradziadku, dlatego chciałby, aby szukany wycinek był jak najdłuższy.
+
+Zakładamy, że każda liczba znajduje się na wycinku długości 1, para sąsiednich liczb na wycinku długości 2, itd.
+Wejście
+
+Pierwszy wiersz standardowego wejścia zawiera dwie liczby całkowite (), oznaczające odpowiednio długość rolki oraz sumę liczb, ktorą powinien posiadać wycinek. Kolejny wiersz wejścia zawiera ciąg liczb całkowitych (), gdzie oznacza wartość -tej liczby wpisanej na rolce papieru.
+
+Możesz założyć, że w testach wartych około punktów zachodzi dodatkowy warunek .
+Wyjście
+
+Pierwszy i jedyny wiersz wyjścia powinien zawierać jedną liczbę całkowitą, równą długości najdłuższego możliwego do uzyskania wycinka lub jedno słowo BRAK, gdy wycinek o sumie nie istnieje.
+Przykład
+
+Dla danych wejściowych:
+
+6 4
+3 -2 6 1 -1 5
+
+poprawną odpowiedzią jest:
+
+4
+
+Autor zadania: Jacek Tomasiewicz.
