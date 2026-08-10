@@ -3,3 +3,6 @@
 * DON'T FOLLOW EXAMPLES - READ TEXT THOROUGHLY (ESPECIALLY THE LATE INTRO)
 * watch out with WHILE loops or FOR loops based on max number - make sure to have correct break statements etc
 * set vector size/use vector.resize/reserve and element removal - std::vector <int> vectr (size), use emplace_back
+* watch out for vector/arr sizes when changing and iterating over them
+* in vector, when doing iteration from the back using .size() - i, make sure it is .size() - 1 - i, the 1 is important :)
+* don't try and synchronize multiple array positions when you can use tuple/pair
