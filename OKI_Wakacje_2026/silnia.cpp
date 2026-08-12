@@ -15,5 +15,14 @@ int main()
     }
     // calculate how many multpiles of 10 and 5 appear
     // maybe use gaussian summation, eg. (10....10000, single sum is 0+0000=5 zeros, then 5x2=10 total zeros)
+    for (long long i = 0; i < num_of_nums; i++) {
+        long long counter = 0;
+        long long result = todo_nums[i];
+        while (result > 0) {
+            result /= 5;
+            counter += result;
+        }
+        cout << counter << "\n";
+    }
     return 0;
 }
