@@ -6,3 +6,25 @@
 * watch out for vector/arr sizes when changing and iterating over them
 * in vector, when doing iteration from the back using .size() - i, make sure it is .size() - 1 - i, the 1 is important :)
 * don't try and synchronize multiple array positions when you can use tuple/pair
+* the error below means <algorithm> is not included:
+/////
+chwasty3.cpp: In function ‘int main()’:
+chwasty3.cpp:66:37: error: no matching function for call to ‘find(std::vector<std::pair<long long int, long long int> >::iterator, std::vector<std::pair<long long int, long long int> >::iterator, std::pair<long long int, long long int>)’
+   66 |                 long long nth = find(xy_matrix.begin(), xy_matrix.end(), make_pair(field_nums[j].first, field_nums[j].second));
+      |                                 ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+chwasty3.cpp:66:37: note: there is 1 candidate
+In file included from /usr/include/c++/15/bits/locale_facets.h:50,
+                 from /usr/include/c++/15/bits/basic_ios.h:39,
+                 from /usr/include/c++/15/ios:48,
+                 from /usr/include/c++/15/bits/ostream.h:43,
+                 from /usr/include/c++/15/ostream:42,
+                 from /usr/include/c++/15/iostream:43,
+                 from chwasty3.cpp:1:
+/usr/include/c++/15/bits/streambuf_iterator.h:437:5: note: candidate 1: ‘template<class _CharT2> typename __gnu_cxx::__enable_if<std::__is_char<_CharT>::__value, std::istreambuf_iterator<_CharT> >::__type std::find(istreambuf_iterator<_CharT>, istreambuf_iterator<_CharT>, const _CharT2&)’
+  437 |     find(istreambuf_iterator<_CharT> __first,
+      |     ^~~~
+/usr/include/c++/15/bits/streambuf_iterator.h:437:5: note: template argument deduction/substitution failed:
+chwasty3.cpp:66:37: note:   ‘__gnu_cxx::__normal_iterator<std::pair<long long int, long long int>*, std::vector<std::pair<long long int, long long int> > >’ is not derived from ‘std::istreambuf_iterator<_CharT>’
+   66 |                 long long nth = find(xy_matrix.begin(), xy_matrix.end(), make_pair(field_nums[j].first, field_nums[j].second));
+      |                                 ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/////
