@@ -3,6 +3,8 @@ using namespace std;
 
 int main()
 {
+	ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 	// ### INPUT ###
 	// gets 5 lines of 5 characters
 	string magical_square = ""; //array to keep the square's strings

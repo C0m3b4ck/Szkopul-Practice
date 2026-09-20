@@ -3,6 +3,8 @@ using namespace std;
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
     // ### INPUT ###
     short counter_arr[4] = {0, 0, 0, 0}; //two even/two uneven needed to pass, last element is a counter and later - a flag
     long long abc[3] = {0,0,0}; //an array for the A, B, C variables

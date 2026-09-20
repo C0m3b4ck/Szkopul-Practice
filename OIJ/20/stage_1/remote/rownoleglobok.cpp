@@ -3,6 +3,8 @@ using namespace std;
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
     short N = 0, M = 0; //N is height (increment variable), M is width
     // ### INPUT ###
     cin >> N >> M; //get N and M from user

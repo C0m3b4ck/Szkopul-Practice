@@ -5,6 +5,8 @@ using namespace std;
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
     //### INPUT ###
     long long N = 0; // N is the ammount of cables
     cin >> N; //get N
