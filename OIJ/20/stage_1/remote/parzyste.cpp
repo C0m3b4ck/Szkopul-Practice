@@ -9,9 +9,9 @@ int main()
     cin >> abc[0] >> abc[1] >> abc[2]; //get A, B, C
     // ### COMPUTING AND OUTPUT ###
     // for each - check if is even, then set flags
-    if (abc[0] % 2 == 0) {counter_arr[0] = 1;}
-    if (abc[1] % 2 == 0) {counter_arr[1] = 1;}
-    if (abc[2] % 2 == 0) {counter_arr[2] = 1;}
+    if (abc[0] & 0 == 0) {counter_arr[0] = 1;}
+    if (abc[1] & 0 == 0) {counter_arr[1] = 1;}
+    if (abc[2] & 0 == 0) {counter_arr[2] = 1;}
     // parse even/uneven states
     for (short i = 0; i < 3; i++)
     {
