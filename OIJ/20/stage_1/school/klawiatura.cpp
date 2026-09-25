@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <map>
 using namespace std;
 
 int main()
@@ -9,15 +8,18 @@ int main()
     cin.tie(nullptr);
     // ### INPUT ###
     string key_input = ""; //string for storing all of the keys
-    cin >> key_input; //get key input from user
-    map<char, vector<long long>> letter_positions; //map of vectors, each with char position
+    getline(cin, key_input); //get key input from user
+    vector<vector<long long>> letter_positions(25); //map of vectors, each with char position
     // ### COMPUTATION ###
     // get all occurrences of all characters into vectors
-    cout << "got here \n"; //done
     for (long long i = 0; i < key_input.length(); i++) // fill all vectors with all character occurrences
     {
-        short tmp = key_input[i];
-        letter_positions[tmp].emplace_back(i); // put position of char into that char's vector
+        char c = key_input[i];
+        if (c >= 'a' && c <= 'z') 
+        {
+            short tmp = c - 'a'; // Map 'a' to 0, 'b' to 1, ..., 'z' to 25
+            letter_positions[tmp].emplace_back(i); // put position of char into that char's vector
+        }
     }
     for (long long i = 0; i < key_input.length(); i++)
     {
@@ -34,7 +36,10 @@ int main()
                         long long tmp = 0;
                         while (letter_positions[i][tmp] > i)
                         {
-                            key_input[(letter_positions[i][tmp])] = ' '; //clear all positions with that letter existing before 'd'
+                            long long pos_to_remove = letter_positions[i][tmp];
+                            key_input[pos_to_remove] = ' '; //clear all positions with that letter existing before 'd'
+                            cout << "Removed " << pos_to_remove << "\n"; //debug
+                            tmp++;
                         }
                         break;
                     }
