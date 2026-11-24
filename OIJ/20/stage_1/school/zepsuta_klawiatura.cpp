@@ -35,9 +35,9 @@ int main()
     }
 
     // wyjscie
-    for (long long i = 0; i < raw_string.length(); i++)
+    for (long long i = 0; i < raw_str.length(); i++)
     {
-        if (raw_string[i] != ' ') // pomija spacje (zostawione dla zachowania dlugosci napisu zamiast usuwania d)
+        if (raw_str[i] != ' ') // pomija spacje (zostawione dla zachowania dlugosci napisu zamiast usuwania d)
         {
             cout << raw_str[i];
         }
